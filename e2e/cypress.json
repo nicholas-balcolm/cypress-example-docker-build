@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:8080",
+  "baseUrl": "http://google.com",
   "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "cypress/results/output.xml"

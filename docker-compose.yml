@@ -12,6 +12,7 @@ services:
   e2e:
     image: cypress
     build: ./e2e
+      target: test-results
     container_name: cypress
     depends_on:
       - web
@@ -22,7 +23,7 @@ services:
     # see https://docs.docker.com/compose/networking/
     environment:
       - CYPRESS_baseUrl=http://web
-    command: npx cypress run
+    # command: npx cypress run
     # mount the host directory e2e/cypress and the file e2e/cypress.json as
     # volumes within the container
     # this means that:
@@ -31,6 +32,6 @@ services:
     #  2. any change that the developer applies to Cypress files on the host
     #     machine immediately takes effect within the e2e container (no docker
     #     rebuild required).
-    volumes:
-      - ./e2e/cypress:/app/cypress
-      - ./e2e/cypress.json:/app/cypress.json
+    # volumes:
+    #   - ./e2e/cypress:/app/cypress
+    #   - ./e2e/cypress.json:/app/cypress.json
